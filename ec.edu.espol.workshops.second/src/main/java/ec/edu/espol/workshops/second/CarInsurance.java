@@ -5,13 +5,13 @@ public class CarInsurance {
 	
 	private String name = "" ;
 	
-	private int age = 0 ;
+	private int age;
 	
 	private String gender = "" ;
 	
-	private boolean married = false ;
+	private boolean married;
 	
-	private boolean license = false ;
+	private boolean license;
 	
 	public CarInsurance(String name, int age, String gender, boolean married, boolean license) {
 		this.name = name ;
@@ -72,7 +72,7 @@ public class CarInsurance {
 			basePremium += 1500 ;	
 		}
 		
-		if( (gender.equals("F")) || (married) ) {
+		else if( (gender.equals("F")) || (married) ) {
 			basePremium -= 200 ;
 		}
 		
@@ -87,7 +87,7 @@ public class CarInsurance {
 	public static String validateInput(Scanner sc, String type, String flavorText) {
 		String input = "";
 		
-		System.out.println(flavorText);
+		System.out.println(flavorText); //NOPMD
 		input = sc.nextLine();
 		
 		if( (type.equals("Number")) ) {
@@ -119,37 +119,46 @@ public class CarInsurance {
 		switch(op) {
 		case 1:
 			gender = "M";
+			break;
 		case 2:
 			gender = "F";
-		case -1:
+			break;
+		default:
 			age = 85;
+			break;
 		}
 
 		op = Integer.parseInt(validateInput(inputReader, "Number", "¿Es casado?:\n1) Si\n2) No"));
 		switch(op) {
 		case 1:
 			isMarried = true;
+			break;
 		case 2:
 			isMarried = false;
-		case -1:
+			break;
+		default:
 			age = 85;
+			break;
 		}
 		
 		op = Integer.parseInt(validateInput(inputReader, "Number", "¿Tiene licencia válida?:\n1) Si\n2) No"));
 		switch(op) {
 		case 1:
 			hasLicense = true;
+			break;
 		case 2:
 			hasLicense = false;
-		case -1:
+			break;
+		default:
 			age = 85;
+			break;
 		}
 
 		inputReader.close();
 		
         CarInsurance c1 = new CarInsurance(name, age, gender, isMarried, hasLicense);
         int premiumValue = c1.premiumCarInsurance(c1.getAge(), c1.getGender(), c1.isMarried(), c1.hasLicense());
-		System.out.println(c1.getName() + "'s car insurance is " + premiumValue);
+		System.out.println(c1.getName() + "'s car insurance is " + premiumValue); //NOPMD
     }
 
 }
