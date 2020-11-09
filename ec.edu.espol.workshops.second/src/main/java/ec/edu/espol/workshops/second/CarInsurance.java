@@ -119,8 +119,10 @@ public class CarInsurance {
 		switch(op) {
 		case 1:
 			gender = "M";
+			break;
 		case 2:
 			gender = "F";
+			break;
 		case -1:
 			age = 85;
 		}
@@ -129,8 +131,10 @@ public class CarInsurance {
 		switch(op) {
 		case 1:
 			isMarried = true;
+			break;
 		case 2:
 			isMarried = false;
+			break;
 		case -1:
 			age = 85;
 		}
@@ -139,8 +143,10 @@ public class CarInsurance {
 		switch(op) {
 		case 1:
 			hasLicense = true;
+			break;
 		case 2:
 			hasLicense = false;
+			break;
 		case -1:
 			age = 85;
 		}
