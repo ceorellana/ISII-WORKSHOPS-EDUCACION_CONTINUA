@@ -1,86 +1,87 @@
 package ec.edu.espol.workshops.second;
+
 import java.util.Scanner;
 
 public class CarInsurance {
 	
-	private String name = "" ;
+	private String name = "";
 	
-	private int age;
+	private int age = 0;
 	
-	private String gender = "" ;
+	private String gender = "";
 	
-	private boolean married;
+	private boolean married = false;
 	
-	private boolean license;
+	private boolean license = false;
 	
 	public CarInsurance(String name, int age, String gender, boolean married, boolean license) {
-		this.name = name ;
-		this.age = age ; 
-		this.gender = gender ;
-		this.married = married ;
-		this.license = license ;
+		this.name = name;
+		this.age = age; 
+		this.gender = gender;
+		this.married = married;
+		this.license = license;
 	}
 
 	public void setName(String name) {
-		this.name = name ;
+		this.name = name;
 	}
 	
 	public void setAge(int age) {
-		this.age = age ;
+		this.age = age;
 	}
 	
 	public void setGender(String gender) {
-		this.gender = gender ;
+		this.gender = gender;
 	}
 	
 	public void setMarried(boolean married) {
-		this.married = married ;
+		this.married = married;
 	}
 	
 	public void setLicense(boolean license) {
-		this.license = license ;
+		this.license = license;
 	}
 	
 	public String getName() {
-		return name ;
+		return name;
 	}
 	
 	public int getAge() {
-		return age ;
+		return age;
 	}
 	
 	public String getGender() {
-		return gender ;
+		return gender;
 	}
 	
 	public boolean isMarried() {
-		return married ;
+		return married;
 	}
 	
 	public boolean hasLicense() {
-		return license ;
+		return license;
 	}
 
 	public int premiumCarInsurance(int age, String gender, boolean married, boolean license) {
-		int basePremium = 500 ;
+		int basePremium = 500;
 		
-		if( (age > 80) || !license) {
-			return -1 ;
+		if ((age > 80) || !license) {
+			return -1;
 		}
 		
-		if( (gender.equals("M")) && (!married) && (age < 25) ) {
-			basePremium += 1500 ;	
+		if ((gender.equals("M")) && (!married) && (age < 25)) {
+			basePremium += 1500;	
 		}
 		
-		else if( (gender.equals("F")) || (married) ) {
-			basePremium -= 200 ;
+		if ((gender.equals("F")) || (married)) {
+			basePremium -= 200;
 		}
 		
-		if( (age >= 45) && (age < 65) ) {
-			basePremium -= 100 ;
+		if ((age >= 45) && (age < 65)) {
+			basePremium -= 100;
 		}
 
-		return basePremium ;
+		return basePremium;
 		
 	}
 	
@@ -90,7 +91,7 @@ public class CarInsurance {
 		System.out.println(flavorText); //NOPMD
 		input = sc.nextLine();
 		
-		if( (type.equals("Number")) ) {
+		if ((type.equals("Number"))) {
 			try {
 				Integer.parseInt(input);
 			} catch (NumberFormatException e) {
@@ -111,12 +112,13 @@ public class CarInsurance {
 		
 		name = validateInput(inputReader, "String", "Nombre: ");
 		age = Integer.parseInt(validateInput(inputReader, "Number", "Edad: "));
-		if ( (age==-1) ) {
+		if ((age == -1)) {
 			age = 85;
 		}
 		
-		op = Integer.parseInt(validateInput(inputReader, "Number", "Sexo:\n1) Masculino\n2) Femenino"));
-		switch(op) {
+		op = Integer.parseInt(validateInput(inputReader, "Number", "Sexo:\n1) "
+				+ "Masculino\n2) Femenino"));
+		switch (op) {
 		case 1:
 			gender = "M";
 			break;
@@ -128,8 +130,9 @@ public class CarInsurance {
 			break;
 		}
 
-		op = Integer.parseInt(validateInput(inputReader, "Number", "¿Es casado?:\n1) Si\n2) No"));
-		switch(op) {
+		op = Integer.parseInt(validateInput(inputReader, "Number", "Â¿Es casado?:\n1) "
+				+ "Si\n2) No"));
+		switch (op){
 		case 1:
 			isMarried = true;
 			break;
@@ -141,8 +144,10 @@ public class CarInsurance {
 			break;
 		}
 		
-		op = Integer.parseInt(validateInput(inputReader, "Number", "¿Tiene licencia válida?:\n1) Si\n2) No"));
-		switch(op) {
+		op = Integer.parseInt(validateInput(inputReader, "Number", 
+				"Â¿Tiene licencia vÃ¡lida?:\n1) "
+				+ "Si\n2) No"));
+		switch (op) {
 		case 1:
 			hasLicense = true;
 			break;
@@ -157,8 +162,9 @@ public class CarInsurance {
 		inputReader.close();
 		
         CarInsurance c1 = new CarInsurance(name, age, gender, isMarried, hasLicense);
-        int premiumValue = c1.premiumCarInsurance(c1.getAge(), c1.getGender(), c1.isMarried(), c1.hasLicense());
-		System.out.println(c1.getName() + "'s car insurance is " + premiumValue); //NOPMD
+        int premiumValue = c1.premiumCarInsurance(c1.getAge(), c1.getGender(), 
+        		c1.isMarried(), c1.hasLicense());
+		System.out.println(c1.getName() + "'s car insurance is " + premiumValue);
     }
 
 }
