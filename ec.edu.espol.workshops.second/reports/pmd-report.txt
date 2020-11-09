@@ -1,0 +1,8 @@
+src/main/java/ec/edu/espol/workshops/second/Library.java:6:	CommentRequired: Class comments are required
+src/main/java/ec/edu/espol/workshops/second/Library.java:6:	CommentRequired: Class comments are required
+src/main/java/ec/edu/espol/workshops/second/Library.java:7:	CommentRequired: Public method and constructor comments are required
+src/main/java/ec/edu/espol/workshops/second/Library.java:7:	CommentRequired: Public method and constructor comments are required
+src/test/java/ec/edu/espol/workshops/second/LibraryTest.java:9:	CommentRequired: Class comments are required
+src/test/java/ec/edu/espol/workshops/second/LibraryTest.java:9:	CommentRequired: Class comments are required
+src/test/java/ec/edu/espol/workshops/second/LibraryTest.java:10:	CommentRequired: Public method and constructor comments are required
+src/test/java/ec/edu/espol/workshops/second/LibraryTest.java:10:	CommentRequired: Public method and constructor comments are required
