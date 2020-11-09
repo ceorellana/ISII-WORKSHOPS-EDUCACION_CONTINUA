@@ -88,7 +88,7 @@ public class CarInsurance {
 	public static String validateInput(Scanner sc, String type, String flavorText) {
 		String input = "";
 		
-		System.out.println(flavorText);
+		System.out.println(flavorText); //NOPMD
 		input = sc.nextLine();
 		
 		if ((type.equals("Number"))) {
@@ -127,9 +127,10 @@ public class CarInsurance {
 			break;
 		default:
 			age = 85;
+			break;
 		}
 
-		op = Integer.parseInt(validateInput(inputReader, "Number", "¿Es casado?:\n1) "
+		op = Integer.parseInt(validateInput(inputReader, "Number", "Â¿Es casado?:\n1) "
 				+ "Si\n2) No"));
 		switch (op){
 		case 1:
@@ -140,10 +141,11 @@ public class CarInsurance {
 			break;
 		default:
 			age = 85;
+			break;
 		}
 		
 		op = Integer.parseInt(validateInput(inputReader, "Number", 
-				"¿Tiene licencia válida?:\n1) "
+				"Â¿Tiene licencia vÃ¡lida?:\n1) "
 				+ "Si\n2) No"));
 		switch (op) {
 		case 1:
@@ -154,6 +156,7 @@ public class CarInsurance {
 			break;
 		default:
 			age = 85;
+			break;
 		}
 
 		inputReader.close();
