@@ -45,8 +45,7 @@ task cucumber() {
 	doLast {
 		javaexec {
 		main = "io.cucumber.core.cli.Main"
-		classpath = configurations.cucumberRuntime + sourceSets.main.output
-	+ sourceSets.test.output
+		classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
 		args = ['--plugin', 'pretty','--monochrome','--plugin',
 	'html:build/reports/cucumber-report.html','--glue', 'ec/edu/espol/workshops/second',
 	'src/test/resources/ec/edu/espol/workshops/second/']
