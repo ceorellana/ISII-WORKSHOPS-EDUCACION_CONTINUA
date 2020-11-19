@@ -65,7 +65,7 @@ public class CarInsurance {
 	public int premiumCarInsurance(int age, String gender, boolean married, boolean license) {
 		int basePremium = 500;
 		
-		if ((age > 80) || !license) {
+		if ((age > 80) || !license || (age < 18)) {
 			return -1;
 		}
 		
