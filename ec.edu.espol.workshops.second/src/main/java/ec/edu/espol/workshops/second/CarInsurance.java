@@ -63,7 +63,7 @@ public class CarInsurance {
 	}
 
 	public int premiumCarInsurance(int age, String gender, boolean married, boolean license) {
-		int basePremium = 600;
+		int basePremium = 700;
 		
 		if ((age > 80) || !license) {
 			return -1;
