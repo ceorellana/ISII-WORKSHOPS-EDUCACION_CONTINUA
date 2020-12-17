@@ -102,4 +102,28 @@ public class PathCoverageTest {
 		assertEquals(400, basePremium, 0.0);
 	}
 	
+	@Test
+	public void testPathCoverageP09() {
+		car.setName("Carlos");
+		car.setGender("M");
+		car.setAge(81);
+		car.setMarried(false);
+		car.setLicense(true);
+		
+		int basePremium = car.premiumCarInsurance(car.getAge(), car.getGender(), car.isMarried(), car.hasLicense());
+		assertEquals(-1, basePremium, 0.0);
+	}
+	
+	@Test
+	public void testPathCoverageP10() {
+		car.setName("Carlos");
+		car.setGender("M");
+		car.setAge(80);
+		car.setMarried(false);
+		car.setLicense(false);
+		
+		int basePremium = car.premiumCarInsurance(car.getAge(), car.getGender(), car.isMarried(), car.hasLicense());
+		assertEquals(-1, basePremium, 0.0);
+	}
+	
 }
