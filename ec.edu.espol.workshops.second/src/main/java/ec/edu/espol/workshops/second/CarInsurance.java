@@ -73,6 +73,10 @@ public class CarInsurance {
 			basePremium += 1500;	
 		}
 		
+		if ((gender.equals("M")) && (age > 25) && (age < 45)) {
+			basePremium -= 100;
+		}
+		
 		if ((gender.equals("F")) || (married)) {
 			basePremium -= 200;
 		}
